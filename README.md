@@ -1,6 +1,6 @@
 Direct solver of algebric equation of 4th order.
 
-This is an extremely simple and efficient (fast) solver of algebric equation of 4th order. The theory and mathematical background is explained in theorymath_sr.docx. It's in Serbian now, but it is going to be translated to English, soon.
+This is an extremely simple and efficient solver of algebric equation of 4th order. As far as I know, this is the fastest one. The theory and mathematical background is explained in theorymath_sr.docx. It's in Serbian now, but it is going to be translated to English, soon.
 
 Quartic equation  x^4 + a·x^3 + b·x^2 + c·x + d = 0  can be solved by the function: 
 
