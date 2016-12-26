@@ -12,7 +12,7 @@ int main()
 	
 	while(1)
 	{
-		// read coefficients of algebric equation of 4th order (-1000 for exiting the application)
+		// read coefficients of an algebric equation of 4th order (-1000 for exiting the application)
 		std::cout << "--------------------------------------------"  << std::endl << std::endl;
 		std::cout << "A = "; std::cin >> a;  if(-1000.0==a) break;
 		std::cout << "B = "; std::cin >> b;  if(-1000.0==b) break;
