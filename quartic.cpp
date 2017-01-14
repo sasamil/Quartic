@@ -64,7 +64,7 @@ unsigned int solveP3(double *x,double a,double b,double c) {
 
 //---------------------------------------------------------------------------
 // solve quartic equation x^4 + a*x^3 + b*x^2 + c*x + d
-// Achtung - this function returns dynamically allocated array. It has to be released afterwards.
+// Attention - this function returns dynamically allocated array. It has to be released afterwards.
 DComplex* solve_quartic(double a, double b, double c, double d)
 {
 	double a3 = -b;
@@ -80,7 +80,7 @@ DComplex* solve_quartic(double a, double b, double c, double d)
 	double q1, q2, p1, p2, D, sqD, y;
 
 	y = x3[0];
-	// Die Hauptsache. Выбор Y с максимальной абсолютной величиной
+	// The essence - Choosing Y with maximal absolute value.
 	if(iZeroes != 1)
 	{
 		if(fabs(x3[1]) > fabs(y)) y = x3[1];
@@ -90,12 +90,12 @@ DComplex* solve_quartic(double a, double b, double c, double d)
 	// h1+h2 = y && h1*h2 = d  <=>  h^2 -y*h + d = 0    (h === q)
 
 	D = y*y - 4*d;
-	if(fabs(D) < eps) //tatsachtlich D==0
+	if(fabs(D) < eps) //in other words - D==0
 	{
 		q1 = q2 = y * 0.5;
 		// g1+g2 = a && g1+g2 = b-y   <=>   g^2 - a*g + b-y = 0    (p === g)
 		D = a*a - 4*(b-y);
-		if(fabs(D) < eps) //tatsachtlich D==0
+		if(fabs(D) < eps) //in other words - D==0
 			p1 = p2 = a * 0.5;
 
 		else
