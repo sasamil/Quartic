@@ -62,7 +62,7 @@ unsigned int solveP3(double* x, double a, double b, double c);
 
 //---------------------------------------------------------------------------
 // solve quartic equation x^4 + a*x^3 + b*x^2 + c*x + d
-// Achtung - this function returns dynamically allocated array. It has to be released afterwards.
+// Attention - this function returns dynamically allocated array. It has to be released afterwards.
 DComplex* solve_quartic(double a, double b, double c, double d);
 
 
