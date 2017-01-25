@@ -80,7 +80,7 @@ DComplex* solve_quartic(double a, double b, double c, double d)
 	double q1, q2, p1, p2, D, sqD, y;
 
 	y = x3[0];
-	// The essence - Choosing Y with maximal absolute value.
+	// The essence - choosing Y with maximal absolute value.
 	if(iZeroes != 1)
 	{
 		if(fabs(x3[1]) > fabs(y)) y = x3[1];
