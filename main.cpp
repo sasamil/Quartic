@@ -34,7 +34,6 @@ int main()
 		std::cout << polinom_4(solutions[2], a, b, c, d) << std::endl;
 		std::cout << polinom_4(solutions[3], a, b, c, d) << std::endl;
 		
-		// releasing the memory
 		delete[] solutions;
 
 		std::cout << std::endl << std::endl;
