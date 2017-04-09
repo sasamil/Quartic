@@ -8,4 +8,4 @@ The solution of a given quartic equation - <i>x^4 + a·x^3 + b·x^2 + c·x + d =
 
 Quartic equation may have different types of roots. a) 4 real roots b) 2 real and 2 complex-conjugate roots c) 4 complex roots (two pairs of complex-conjugates). Our <i>solve_quartic()</i> returns the array of four complex numbers. If there are real roots, the immaginary parts of corresponding array members (solutions) will just be 0.
 
-<i>main.cpp</i> file is given here just for testing and experimenting.
+(<i>main.cpp</i> file is given here for testing and experimenting)
