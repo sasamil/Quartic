@@ -10,7 +10,7 @@ int main()
 	std::cout << std::fixed << std::setprecision(8);
 	double a, b, c, d;
 	
-	while(1)
+	while(true)
 	{
 		// read coefficients of an algebric equation of 4th order (-1000 for exiting the application)
 		std::cout << "--------------------------------------------"  << std::endl << std::endl;
