@@ -1,1 +1,0 @@
-Graphic ilustrations of results
