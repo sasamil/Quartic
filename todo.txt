@@ -1,0 +1,5 @@
+1. Implementation in C
+
+2. Implementation in Python
+
+3. Implementation in Haskell
