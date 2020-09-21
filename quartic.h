@@ -17,11 +17,12 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
- 
+
 #ifndef QUARTIC_H_INCLUDED
 #define QUARTIC_H_INCLUDED
 
 #include <complex>
+#include <memory>
 
 const double PI = 3.141592653589793238463L;
 const double M_2PI = 2*PI;
@@ -62,8 +63,6 @@ unsigned int solveP3(double* x, double a, double b, double c);
 
 //---------------------------------------------------------------------------
 // solve quartic equation x^4 + a*x^3 + b*x^2 + c*x + d
-// Attention - this function returns dynamically allocated array. It has to be released afterwards.
-DComplex* solve_quartic(double a, double b, double c, double d);
-
+std::unique_ptr<DComplex[]> solve_quartic(double a, double b, double c, double d);
 
 #endif // QUARTIC_H_INCLUDED

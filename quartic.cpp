@@ -34,7 +34,7 @@ unsigned int solveP3(double *x,double a,double b,double c) {
     	double r2 = r*r;
 	double q3 = q*q*q;
 	double A,B;
-    	if(r2<q3) 
+    	if(r2<q3)
     	{
     		double t=r/sqrt(q3);
     		if( t<-1) t=-1;
@@ -45,27 +45,26 @@ unsigned int solveP3(double *x,double a,double b,double c) {
     		x[1]=q*cos((t+M_2PI)/3)-a;
     		x[2]=q*cos((t-M_2PI)/3)-a;
     		return 3;
-    	} 
-    	else 
+    	}
+    	else
     	{
     		A =-pow(fabs(r)+sqrt(r2-q3),1./3);
     		if( r<0 ) A=-A;
     		B = (0==A ? 0 : q/A);
-          
+
 		a/=3;
 		x[0] =(A+B)-a;
 		x[1] =-0.5*(A+B)-a;
 		x[2] = 0.5*sqrt(3.)*(A-B);
 		if(fabs(x[2])<eps) { x[2]=x[1]; return 2; }
-		
+
 		return 1;
         }
 }
 
 //---------------------------------------------------------------------------
 // solve quartic equation x^4 + a*x^3 + b*x^2 + c*x + d
-// Attention - this function returns dynamically allocated array. It has to be released afterwards.
-DComplex* solve_quartic(double a, double b, double c, double d)
+std::unique_ptr<DComplex[]> solve_quartic(double a, double b, double c, double d)
 {
 	double a3 = -b;
 	double b3 =  a*c -4.*d;
@@ -73,14 +72,14 @@ DComplex* solve_quartic(double a, double b, double c, double d)
 
 	// cubic resolvent
 	// y^3 − b*y^2 + (ac−4d)*y − a^2*d−c^2+4*b*d = 0
-	
+
 	double x3[3];
 	unsigned int iZeroes = solveP3(x3, a3, b3, c3);
-	
+
 	double q1, q2, p1, p2, D, sqD, y;
 
 	y = x3[0];
-	// The essence - choosing Y with maximal absolute value.
+	// THE ESSENCE - choosing Y with maximal absolute value !
 	if(iZeroes != 1)
 	{
 		if(fabs(x3[1]) > fabs(y)) y = x3[1];
@@ -115,7 +114,7 @@ DComplex* solve_quartic(double a, double b, double c, double d)
 		p2 = (c-a*q2)/(q1-q2);
 	}
 
-	DComplex* retval = new DComplex[4];
+    auto retval = std::unique_ptr<DComplex[]>(new DComplex[4]);
 
 	// solving quadratic eq. - x^2 + p1*x + q1 = 0
 	D = p1*p1 - 4*q1;
