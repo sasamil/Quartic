@@ -63,8 +63,9 @@ unsigned int solveP3(double *x,double a,double b,double c) {
 }
 
 //---------------------------------------------------------------------------
-// solve quartic equation x^4 + a*x^3 + b*x^2 + c*x + d
-std::unique_ptr<DComplex[]> solve_quartic(double a, double b, double c, double d)
+// Solve quartic equation x^4 + a*x^3 + b*x^2 + c*x + d
+// (attention - this function returns dynamically allocated array. It has to be released afterwards)
+DComplex* solve_quartic(double a, double b, double c, double d)
 {
 	double a3 = -b;
 	double b3 =  a*c -4.*d;
@@ -114,7 +115,7 @@ std::unique_ptr<DComplex[]> solve_quartic(double a, double b, double c, double d
 		p2 = (c-a*q2)/(q1-q2);
 	}
 
-    auto retval = std::unique_ptr<DComplex[]>(new DComplex[4]);
+    DComplex* retval = new DComplex[4];
 
 	// solving quadratic eq. - x^2 + p1*x + q1 = 0
 	D = p1*p1 - 4*q1;
